@@ -27,18 +27,16 @@ describe('fizzBuzzer tests', function() {
     });
 
     it('should be a number not divisible by 15, 5 or 3', function() {
-        const normalCases = [4, 11, 19];
-        normalCases.forEach( input => {
+        [4, 11, 19].forEach( input => {
             expect(fizzBuzzer(input)).to.equal(input);
         });
     });
 
     // test for edge cases
     it('should raise error if input is not a number', function() {
-        const badInputs = [false, '3', true, 'busted'];
-        badInputs.forEach( item => {
-            expect( function() {
-                fizzBuzzer(item);
+        [false, '3', true, 'busted'].forEach( input => {
+            expect( input => {
+                fizzBuzzer(input);
             }).to.throw(Error); 
         });
     });
